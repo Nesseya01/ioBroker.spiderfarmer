@@ -1,0 +1,42 @@
+{
+  "name": "iobroker.spiderfarmer",
+  "version": "0.2.0",
+  "description": "Unofficial ioBroker cloud adapter for Spider Farmer GGS PS5",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "Nesseya01",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.3.2",
+    "mqtt": "^5.10.4"
+  },
+  "files": [
+    "main.js",
+    "io-package.json",
+    "lib/",
+    "admin/",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "keywords": [
+    "iobroker",
+    "spider-farmer",
+    "ggs",
+    "mqtt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nesseya01/ioBroker.spiderfarmer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nesseya01/ioBroker.spiderfarmer/issues"
+  },
+  "homepage": "https://github.com/Nesseya01/ioBroker.spiderfarmer#readme",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check main.js && node --check lib/cloud-api.js"
+  }
+}

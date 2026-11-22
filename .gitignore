@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+*.log
+.env*
+!.env.example
+sf.session.json
+*session*.json
+*.key
+*.pem
+*.tgz
+.DS_Store

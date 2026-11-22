@@ -1,0 +1,82 @@
+{
+  "common": {
+    "name": "spiderfarmer",
+    "version": "0.2.0",
+    "titleLang": {
+      "en": "Spider Farmer",
+      "de": "Spider Farmer"
+    },
+    "desc": {
+      "en": "Unofficial GGS PS5 cloud integration",
+      "de": "Inoffizielle GGS-PS5-Cloud-Anbindung"
+    },
+    "authors": [
+      "Nesseya01"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "main": "main.js",
+    "enabled": true,
+    "loglevel": "info",
+    "type": "iot-systems",
+    "connectionType": "cloud",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "compact": false,
+    "messagebox": true,
+    "news": {
+      "0.2.0": {
+        "en": "Public beta with email-code setup and device selection.",
+        "de": "Öffentliche Beta mit E-Mail-Code-Anmeldung und Geräteauswahl."
+      }
+    },
+    "globalDependencies": [
+      {
+        "admin": ">=7.0.0"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.0"
+      }
+    ]
+  },
+  "native": {
+    "mqttUsername": "",
+    "mqttPassword": "",
+    "userId": "",
+    "serial": "",
+    "productType": "",
+    "aliasPrefix": "",
+    "email": "",
+    "_otp": ""
+  },
+  "encryptedNative": [
+    "mqttUsername",
+    "mqttPassword",
+    "_otp"
+  ],
+  "protectedNative": [
+    "mqttUsername",
+    "mqttPassword",
+    "_otp"
+  ],
+  "instanceObjects": [
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": "Cloud-Verbindung",
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
