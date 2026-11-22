@@ -1,0 +1,62 @@
+{
+  "type": "panel",
+  "items": {
+    "notice": {
+      "type": "staticText",
+      "text": "Public beta: GGS PS5 only. Start this instance first. Enter email, request code, sign in, choose device and activate without saving between these steps. First login may sign the phone app out once.",
+      "sm": 12
+    },
+    "email": {
+      "type": "text",
+      "label": "Spider Farmer account email",
+      "sm": 12
+    },
+    "_request": {
+      "type": "sendTo",
+      "label": "1. Request email code",
+      "command": "requestCode",
+      "jsonData": "{\"email\":\"${data.email}\"}",
+      "showProcess": true,
+      "timeout": 30000,
+      "sm": 12
+    },
+    "_otp": {
+      "type": "password",
+      "label": "One-time email code",
+      "doNotSave": true,
+      "sm": 12
+    },
+    "_login": {
+      "type": "sendTo",
+      "label": "2. Sign in",
+      "command": "login",
+      "jsonData": "{\"email\":\"${data.email}\",\"code\":\"${data._otp}\"}",
+      "showProcess": true,
+      "timeout": 120000,
+      "sm": 12
+    },
+    "serial": {
+      "type": "selectSendTo",
+      "label": "3. Choose GGS PS5 device (refresh after signing in)",
+      "command": "getDevices",
+      "noAutoRefresh": false,
+      "sm": 12
+    },
+    "_activate": {
+      "type": "sendTo",
+      "label": "4. Activate selected device",
+      "command": "activate",
+      "jsonData": "{\"serial\":\"${data.serial}\"}",
+      "showProcess": true,
+      "timeout": 30000,
+      "reloadBrowser": true,
+      "sm": 12
+    },
+    "aliasPrefix": {
+      "type": "text",
+      "label": "Optional 0_userdata.0 alias prefix (leave empty normally)",
+      "help": "Advanced integration only. Does not affect native adapter states.",
+      "sm": 12
+    }
+  }
+}
